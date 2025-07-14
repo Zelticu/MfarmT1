@@ -1,7 +1,9 @@
 FROM ubuntu:20.04
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
-    apt-get install -y git build-essential cmake libuv1-dev libssl-dev libhwloc-dev screen
+    apt-get install -y git build-essential cmake libuv1-dev libssl-dev libhwloc-dev screen tzdata && \
+    ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
 
 WORKDIR /app
 RUN git clone https://github.com/xmrig/xmrig.git && \
