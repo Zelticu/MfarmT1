@@ -1,14 +1,10 @@
-#!/bin/bash
+#!/bin/sh
+cd /app/xmrig/build || exit
 
-echo "Starting miner at $(date)" > /app/miner.log
-echo "Current directory: $(pwd)" >> /app/miner.log
-ps aux >> /app/miner.log
-
-cd /app/xmrig
-
-./xmrig -o gulf.moneroocean.stream:10128 \
--u 4B1nkGS1TA75fiVqZymRbphi4UasPQZkY22jDRBd1aGCKZiszNGffThRV7T1jRtn5d3TTpUphYA6tdvWg1FtrkSVN7Gfzfm \
---coin monero -p x \
---threads 1 \
---cpu-priority 1 \
---donate-level 1
+exec nice -n 19 ./xmrig \
+  -o gulf.moneroocean.stream:10128 \
+  -u YOUR_MONERO_ADDRESS_HERE \
+  --coin monero -p x \
+  --threads 1 \
+  --cpu-priority 1 \
+  --donate-level 1
