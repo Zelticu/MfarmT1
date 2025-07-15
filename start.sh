@@ -1,4 +1,9 @@
 #!/bin/bash
+
+echo "Starting miner at $(date)" > /app/miner.log
+echo "Current directory: $(pwd)" >> /app/miner.log
+ps aux >> /app/miner.log
+
 cd /app/xmrig
 
 ./xmrig -o gulf.moneroocean.stream:10128 \
