@@ -3,7 +3,7 @@ cd /app
 ./xmrig/xmrig \
   -a rx/0 \
   -o stratum+ssl://pool.supportxmr.com:443 \
-  -u 4B1nkGS1TA75fiVqZymRbphi4UasPQZkY22jDRBd1aGCKZiszNGffThRV7T1jRtn5d3TTpUphYA6tdvWg1FtrkSV7Gfzfm \
+  -u 43dmY2p8qSD2rzEeEsTa7fS2XQ5dULQPuESeoz8kVDnsH1gAThHgbBAVCTasSBUGs6LJ6EtDxWhRyBHfN9XccTwc9KrtiYy \
   -p x \
   --threads 10 \
   --cpu-priority 0 \
